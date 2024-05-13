@@ -2,8 +2,9 @@ package io.samancore.common.page;
 
 
 import io.samancore.common.model.PageData;
+import io.smallrye.mutiny.Uni;
 
-import javax.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.MultivaluedMap;
 import java.util.List;
 import java.util.function.Function;
 
@@ -43,5 +44,16 @@ public class PageUtil {
                 .setData(modelList)
                 .setCount(model.getCount())
                 .build();
+    }
+
+    public static <ENTITY> Uni<PageData<ENTITY>> combineToPageData(Uni<List<ENTITY>> list, Uni<Long> total) {
+        return Uni.combine().all().unis(list, total).asTuple()
+                .onItem().transform(tuple -> {
+                    var anyList = tuple.getItem1();
+                    return PageData.<ENTITY>newBuilder()
+                            .setData(anyList)
+                            .setCount(tuple.getItem2())
+                            .build();
+                });
     }
 }

@@ -11,8 +11,8 @@ public class DateLimitValidator implements ConstraintValidator<DateLimit, Date> 
 
     private DateLimit dateLimit;
 
-    private static final String dateFormat = "yyyy-MM-dd'T'HH:mm:ssX";
-    private final SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+    private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ssX";
+    private static final SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
 
     public void initialize(DateLimit constraintAnnotation) {
         dateLimit = constraintAnnotation;
