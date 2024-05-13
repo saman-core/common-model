@@ -28,7 +28,7 @@ public class DateDisableValidator implements ConstraintValidator<DateDisable, Da
             return true;
         }
         if (dateDisable.disableDates() != null || dateDisable.disableWeekdays() || dateDisable.disableWeekends()) {
-            var disableDatesArr = dateDisable.disableDates() != null ? dateDisable.disableDates().split(",") : null;
+            var disableDatesArr = dateDisable.disableDates() != null && !dateDisable.disableDates().isEmpty() ? dateDisable.disableDates().split(",") : null;
             if (disableDatesArr != null && disableDatesArr.length > 0) {
                 var dateDisableds = Arrays.stream(disableDatesArr).map(this::getDateDisabled).toList();
                 if (dateDisableds.stream().anyMatch(dateDisabled -> evaluateDateIsDisabled(date, dateDisabled))) {
