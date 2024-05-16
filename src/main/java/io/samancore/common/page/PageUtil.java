@@ -1,6 +1,5 @@
 package io.samancore.common.page;
 
-
 import io.samancore.common.model.PageData;
 import io.smallrye.mutiny.Uni;
 
