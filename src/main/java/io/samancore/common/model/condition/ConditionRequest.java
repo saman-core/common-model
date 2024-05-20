@@ -18,4 +18,5 @@ public class ConditionRequest {
     Map<String, Object> variables;
     Set<String> modifiedProperties;
     boolean isInitial;
+    Boolean withoutPresentation;
 }
