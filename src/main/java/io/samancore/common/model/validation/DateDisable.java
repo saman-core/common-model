@@ -1,4 +1,4 @@
-package io.samancore.common.validation;
+package io.samancore.common.model.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

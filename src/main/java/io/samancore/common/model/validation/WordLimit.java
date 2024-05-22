@@ -1,4 +1,4 @@
-package io.samancore.common.validation;
+package io.samancore.common.model.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
@@ -10,15 +10,15 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = DateLimitValidator.class)
-public @interface DateLimit {
-    String message() default "this date is out of valid dates";
+@Constraint(validatedBy = WordLimitValidator.class)
+public @interface WordLimit {
+    String message() default "count of word should be in words limit ";
 
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};
 
-    String minDate();
+    int min() default 0;
 
-    String maxDate();
+    int max() default Integer.MAX_VALUE;
 }
