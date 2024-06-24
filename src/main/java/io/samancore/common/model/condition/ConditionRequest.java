@@ -17,6 +17,6 @@ import java.util.Set;
 public class ConditionRequest {
     Map<String, Object> variables;
     Set<String> modifiedProperties;
-    boolean isInitial;
+    boolean evalAll;
     Boolean withoutPresentation;
 }
