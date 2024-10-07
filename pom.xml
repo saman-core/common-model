@@ -44,19 +44,16 @@
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
             <version>${jakarta.validation-api.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${commons-lang3.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.logging</groupId>
             <artifactId>jboss-logging</artifactId>
             <version>${jboss-logging.version}</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
